@@ -1,0 +1,102 @@
+<html>
+    <head>   
+       <script>
+        var vraagVrucht = document.getElementsByName("vrucht");
+        var vraagRekensom = document.getElementsByName("rekensom");
+        var vraagSprookje = document.getElementsByName("sprookje");
+        var vraagZoogdier = document.getElementsByName("zoogdier");
+        
+        var vragen = [vraagVrucht, vraagRekensom, vraagSprookje, vraagZoogdier];
+        var goedeAntwoorden = ["v1a3", "v2a4", "v3a3", "v4a3"];
+        var gegevenAntwoorden = [];
+
+
+        function antwoordVraag(hetAntwoord){
+            console.log(hetAntwoord);
+            for(i = 0 ; i < hetAntwoord.length ; hetAntwoord++){
+                switch(hetAntwoord[i]){
+                    case hetAntwoord[0]:
+                        console.log(hetAntwoord[0].id);
+
+                    case hetAntwoord[1]:
+                        console.log(hetAntwoord[1].id);
+
+                    case hetAntwoord[2]:
+                        console.log(hetAntwoord[2].id);
+
+                    case hetAntwoord[3]:
+                        console.log(hetAntwoord[3].id);
+                }
+
+            }
+        }
+
+        function antwoorden(deVraag){
+            console.log(deVraag);
+            for(i = 0 ; i < deVraag.length ; deVraag++){
+                switch(deVraag[i]){
+                    case deVraag[0]:
+                        console.log(deVraag[0])
+                        antwoordVraag(deVraag[0]);
+
+                    case deVraag[1]:
+                        antwoordVraag(deVraag[1]);
+
+                    case deVraag[2]:
+                        antwoordVraag(deVraag[2]);
+
+                    case deVraag[3]:
+                        antwoordVraag(deVraag[3]);
+                }
+
+            }
+                
+        }
+
+        </script>
+        <style>
+        div {
+           border: 2px solid red;
+        }
+        </style>
+    </head>
+    <body>
+        <h2>Examen</h2>
+
+        <form>
+            Welke vrucht is geel en krom?<br>
+            <input type= radio name= vrucht id= v1a1 value="sinaasappel"> Sinaasappel<br>
+            <input type= radio name= vrucht id= v1a2 value="banaan"> Banaan<br>
+            <input type= radio name= vrucht id= v1a3 value="druif"> Druif<br>
+            <input type= radio name= vrucht id= v1a4 value="aardbei"> Aardbei
+        </form> 
+
+        <form>
+            Wat is de oplossing van de volgende rekensom? 11 x 7 = ..<br>
+            <input type= radio name= rekensom id= v2a1 value="28"> 28<br>
+            <input type= radio name= rekensom id= v2a2 value="65"> 65<br>
+            <input type= radio name= rekensom id= v2a3 value="89"> 89<br>
+            <input type= radio name= rekensom id= v2a4 value="77"> 77  
+        </form>
+        
+        <form>
+            Wat liet Klein Duimpje vallen om de weg terug naar huis te vinden?<br>
+            <input type= radio name= sprookje id= v3a1 value="knikkers"> Knikkers<br>
+            <input type= radio name= sprookje id= v3a2 value="hoeden"> Hoeden<br>
+            <input type= radio name= sprookje id= v3a3 value="broodkruimels"> Broodkruimels<br>
+            <input type= radio name= sprookje id= v3a4 value="eikels"> Eikels 
+        </form> 
+
+        <form>
+            Welk van de onderstaande dieren is geen zoogdier?<br>
+            <input type= radio name= zoogdier id= v4a1 value="gorilla"> Gorilla<br>
+            <input type= radio name= zoogdier id= v4a2 value="dolfijn"> Dolfijn<br>
+            <input type= radio name= zoogdier id= v4a3 value="python"> Python<br>
+            <input type= radio name= zoogdier id= v4a4 value="vogelbekdier"> Vogelbekdier
+        </form> 
+
+        <input type= submit value = "Submit" onclick=antwoorden(vragen)></button><br><br>
+        Aantal goede antwoorden<br>
+        <div id=uitkomst> uitkomst </div>
+   </body>
+</html>
